@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/:id", to: "essays#show", as: :essay
+
 end

@@ -1,10 +1,11 @@
 import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import render from './render';
 
 $(function() {
-  ReactDOM.render(
-    <h1>Boo yaa</h1>,
-    document.getElementById('app')
+  let reactCurriculumNavigatorElement = document.getElementById(
+    'react-curriculum-navigator'
   );
+  if (reactCurriculumNavigatorElement) {
+    render(reactCurriculumNavigatorElement);
+  }
 });

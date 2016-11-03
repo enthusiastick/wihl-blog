@@ -4,7 +4,7 @@ import {
   FETCH_ESSAY_REQUEST_SUCCESS,
   FETCH_ESSAYS_REQUEST,
   FETCH_ESSAYS_REQUEST_FAILURE,
-  FETCH_ESSAYS_SUCCESS
+  FETCH_ESSAYS_REQUEST_SUCCESS
 } from '../actions/essays';
 
 const initialState = {
@@ -39,7 +39,7 @@ let essays = (state = initialState, action) => {
       return Object.assign({}, state, {
         isFetchingEssays: true
       });
-    case FETCH_ESSAYS_FAILURE:
+    case FETCH_ESSAYS_REQUEST_FAILURE:
       return Object.assign({}, state, {
         isFetchingEssays: false
       });

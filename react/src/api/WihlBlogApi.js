@@ -34,4 +34,6 @@ class WihlBlogApi {
     })
   }
 
+}
+
 export default WihlBlogApi;
