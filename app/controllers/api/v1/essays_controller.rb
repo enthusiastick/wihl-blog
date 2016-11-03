@@ -5,7 +5,12 @@ class Api::V1::EssaysController < ApplicationController
   end
 
   def show
-    render json: Essay.find_by(slug: params[:id])
+    @essay = Essay.find_by(slug: params[:id])
+    if @essay.present?
+      render json: @essay
+    else
+      render json: @essay, status: :not_found
+    end
   end
 
 end
