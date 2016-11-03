@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "active_model_serializers", "~> 0.10.0"
 gem "haml"
 gem "jquery-rails"
 gem "pg", "~> 0.18"
