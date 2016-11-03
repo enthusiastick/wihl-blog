@@ -38,7 +38,7 @@ let fetchEssayRequestFailure = () => {
 
 let fetchEssay = (slug) => dispatch => {
   dispatch(fetchEssayRequest());
-  return EventHorizonApi.fetchEssay(slug)
+  return WihlBlogApi.fetchEssay(slug)
   .then(
     data => dispatch(fetchEssayRequestSuccess(data)),
     () => dispatch(fetchEssayRequestFailure())

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Loading from '../components/Loading';
 import Essay from '../components/Essay';
 import { fetchEssay } from '../actions/essays';
 
@@ -17,25 +18,33 @@ class EssayContainer extends Component {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       let { slug } = nextProps.params;
       this.props.fetchEssay(slug);
+      window.scrollTo(0, 0);
     }
   }
 
   render() {
-    let { params } = this.props;
+    let { essaysById, essaysBySlug, essaysIsFetching, params } = this.props;
+    let { slug } = params;
+
+    // let essay = essaysBySlug[slug];
+    let essay = null;
+
+    if (!essay) {
+      return <Loading />;
+    }
 
     return (
-      <Essay
-        essay={essay}
-        essaySlug={params.slug}
-      />
+      <Essay {...essay}  params={params} />
     );
   }
 };
 
-let mapStateToProps = ({ essays }) => {
+let mapStateToProps = ({ essays, routing }) => {
   return {
-    isFetchingEssay: essays.isFetchingEssay
-  };
+    essaysIsFetching: essays.isFetching,
+    essaysById: essays.byId,
+    essaysBySlug: essays.bySlug
+  }
 };
 
-export default connect(mapStateToProps, { fetchEssay })(EssayContainer);
+export default connect(mapStateToProps, { fetchEssay }) (EssayContainer);

@@ -4,7 +4,7 @@ import EssayContainer from './containers/EssayContainer';
 
 let routes = (
   <Route>
-    <IndexRoute component={EssayContainer} />
+    <Route path="/:slug" component={EssayContainer} />
   </Route>
 );
 

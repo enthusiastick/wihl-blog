@@ -1,11 +1,11 @@
 import 'babel-polyfill';
-import render from './render';
+import renderEssay from './renderEssay';
 
 $(function() {
-  let reactCurriculumNavigatorElement = document.getElementById(
-    'react-curriculum-navigator'
+  let reactEssayElement = document.getElementById(
+    'essay-show'
   );
-  if (reactCurriculumNavigatorElement) {
-    render(reactCurriculumNavigatorElement);
+  if (reactEssayElement) {
+    renderEssay(reactEssayElement);
   }
 });
