@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Essay = ({ essay, essaySlug }) => {
+const Essay = ({ essay }) => {
 
   return (
     <div>

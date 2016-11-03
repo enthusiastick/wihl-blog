@@ -9,7 +9,7 @@ import {
 
 const initialState = {
   byId: {},
-  byName: {},
+  bySlug: {},
   isFetchingEssays: false,
   isFetchingEssay: false
 };
@@ -26,13 +26,13 @@ let essays = (state = initialState, action) => {
       });
     case FETCH_ESSAY_REQUEST_SUCCESS:
       let essayById = { [action.essay.id]: action.essay };
-      let essayByName = { [action.essay.name]: action.essay };
+      let essayBySlug = { [action.essay.slug]: action.essay };
       let nextById = Object.assign({}, state.byId, essayById);
-      let nextByName = Object.assign({}, state.byName, essayByName)
+      let nextBySlug = Object.assign({}, state.bySlug, essayBySlug)
 
       return Object.assign({}, state, {
         byId: nextById,
-        byName: nextByName,
+        bySlug: nextBySlug,
         isFetchingEssay: false
       });
     case FETCH_ESSAYS_REQUEST:
@@ -51,16 +51,16 @@ let essays = (state = initialState, action) => {
         return Object.assign(previousValue, newValue)
       }, {});
 
-      let essaysNames = action.essays.reduce((previousValue, currentValue) => {
-        let newValue = { [currentValue.name]: currentValue}
+      let essaysSlugs = action.essays.reduce((previousValue, currentValue) => {
+        let newValue = { [currentValue.slug]: currentValue}
         return Object.assign(previousValue, newValue)
       }, {});
 
       let nextEssaysById = Object.assign({}, state.byId, essaysIds);
-      let nextEssaysByName = Object.assign({}, state.byName, essaysNames);
+      let nextEssaysBySlug = Object.assign({}, state.bySlug, essaysSlugs);
       return Object.assign({}, state, {
         byId: nextEssaysById,
-        byName: nextEssaysByName,
+        bySlug: nextEssaysBySlug,
         isFetchingEssays: false
       });
     default:

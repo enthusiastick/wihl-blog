@@ -26,15 +26,14 @@ class EssayContainer extends Component {
     let { essaysById, essaysBySlug, essaysIsFetching, params } = this.props;
     let { slug } = params;
 
-    // let essay = essaysBySlug[slug];
-    let essay = null;
+    let essay = essaysBySlug[slug];
 
     if (!essay) {
       return <Loading />;
     }
 
     return (
-      <Essay {...essay}  params={params} />
+      <Essay essay={essay} params={params} />
     );
   }
 };

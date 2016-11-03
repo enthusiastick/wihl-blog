@@ -26,7 +26,7 @@ let fetchEssayRequest = () => {
 let fetchEssayRequestSuccess = data => {
   return {
     type: FETCH_ESSAY_REQUEST_SUCCESS,
-    essay: data.essay
+    essay: data
   };
 };
 
