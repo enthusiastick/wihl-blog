@@ -8,11 +8,11 @@ import configureStore from './stores/configureStore';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
-let render = element => {
+let renderBlog = element => {
   ReactDOM.render(
     <Root store={store} history={history} />,
     element
   );
 };
 
-export default render;
+export default renderBlog;

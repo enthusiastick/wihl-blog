@@ -1,11 +1,17 @@
 import 'babel-polyfill';
-import renderEssay from './renderEssay';
+import renderBlog from './renderBlog';
 
 $(function() {
   let reactEssayElement = document.getElementById(
     'essay-show'
   );
   if (reactEssayElement) {
-    renderEssay(reactEssayElement);
+    renderBlog(reactEssayElement);
+  }
+  let reactEssaysElement = document.getElementById(
+    'essays-index'
+  );
+  if (reactEssaysElement) {
+    renderBlog(reactEssaysElement);
   }
 });

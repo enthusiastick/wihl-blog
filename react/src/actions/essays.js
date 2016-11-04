@@ -54,7 +54,7 @@ let fetchEssaysRequest = () => {
 let fetchEssaysRequestSuccess = data => {
   return {
     type: FETCH_ESSAYS_REQUEST_SUCCESS,
-    essays: data.essays
+    essays: data
   };
 };
 
@@ -66,7 +66,7 @@ let fetchEssaysRequestFailure = () => {
 
 let fetchEssays = (teamSlug) => dispatch => {
   dispatch(fetchEssaysRequest());
-  return EventHorizonApi.fetchEssays()
+  return WihlBlogApi.fetchEssays()
   .then(
     data => dispatch(fetchEssaysRequestSuccess(data)),
     () => dispatch(fetchEssaysRequestFailure())
