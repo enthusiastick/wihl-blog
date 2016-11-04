@@ -9,7 +9,7 @@ const Essays = ({ essaysById }) => {
         <Essay
           essay={essaysById[id]}
         />
-        <hr/ >
+        <hr />
       </div>
     )
   }));

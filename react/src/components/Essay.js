@@ -9,12 +9,12 @@ const Essay = ({ essay }) => {
   return (
     <div className="row">
       <div className="small-10 medium-5 small-centered columns">
-        <h1>
+        <h1 className="text-center">
           <a href={essay.slug}>
             {essay.title}
           </a>
         </h1>
-        <p>
+        <p className="text-center">
           Posted by&nbsp;
           <strong>
             {essay.author}&nbsp;
