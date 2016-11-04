@@ -3,7 +3,7 @@ import Essay from './Essay';
 
 const Essays = ({ essaysById }) => {
 
-  let blogEssays = Object.keys(essaysById).map((id => {
+  let blogEssays = Object.keys(essaysById).reverse().map((id => {
     return (
       <div key={id}>
         <Essay

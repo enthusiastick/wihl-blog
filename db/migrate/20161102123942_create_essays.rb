@@ -1,7 +1,7 @@
 class CreateEssays < ActiveRecord::Migration[5.0]
   def change
     create_table :essays do |t|
-      t.integer :author, null: false
+      t.string :author, null: false
       t.text :body, null: false
       t.date :publication_date, null: false
       t.string :slug, null: false

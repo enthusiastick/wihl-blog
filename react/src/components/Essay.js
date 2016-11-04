@@ -1,21 +1,26 @@
 import React from 'react';
+import blogMarkdownParser from '../utilities/blogMarkdownParser';
 
 const Essay = ({ essay }) => {
+
+  let markdownParsedbody = blogMarkdownParser(essay.body);
+  let renderedHTML = { __html: markdownParsedbody };
 
   return (
     <div>
       <h1>
-        {essay.title}
+        <a href={essay.slug}>
+          {essay.title}
+        </a>
       </h1>
       <p>
+        Posted by&nbsp;
         <strong>
-          Posted By:
+          {essay.author}&nbsp;
         </strong>
-        &nbsp;{essay.author}
+        on {essay.publicationDate}
       </p>
-      <div>
-        {essay.body}
-      </div>
+      <div dangerouslySetInnerHTML={renderedHTML} />
     </div>
   );
 }

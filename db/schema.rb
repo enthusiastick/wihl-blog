@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20161102123942) do
   enable_extension "plpgsql"
 
   create_table "essays", force: :cascade do |t|
-    t.integer  "author"
-    t.text     "body"
-    t.date     "publication_date"
-    t.string   "slug"
-    t.string   "title"
+    t.string   "author",           null: false
+    t.text     "body",             null: false
+    t.date     "publication_date", null: false
+    t.string   "slug",             null: false
+    t.string   "title",            null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["slug"], name: "index_essays_on_slug", unique: true, using: :btree

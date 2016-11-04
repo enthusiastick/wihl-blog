@@ -1,7 +1,7 @@
 class Api::V1::EssaysController < ApplicationController
 
   def index
-    @essays = Essay.order(created_at: :desc).limit(10)
+    @essays = Essay.order(publication_date: :desc).limit(10)
     render json: @essays
   end
 
