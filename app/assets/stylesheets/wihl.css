@@ -1,0 +1,15 @@
+a {
+  color: #FFBF00;
+}
+
+a:hover, a:active {
+  color: #FFD24C;
+  text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #101010, #FFBF00, #101010);
+}
+

@@ -7,20 +7,22 @@ const Essay = ({ essay }) => {
   let renderedHTML = { __html: markdownParsedbody };
 
   return (
-    <div>
-      <h1>
-        <a href={essay.slug}>
-          {essay.title}
-        </a>
-      </h1>
-      <p>
-        Posted by&nbsp;
-        <strong>
-          {essay.author}&nbsp;
-        </strong>
-        on {essay.publicationDate}
-      </p>
-      <div dangerouslySetInnerHTML={renderedHTML} />
+    <div className="row">
+      <div className="small-10 medium-5 small-centered columns">
+        <h1>
+          <a href={essay.slug}>
+            {essay.title}
+          </a>
+        </h1>
+        <p>
+          Posted by&nbsp;
+          <strong>
+            {essay.author}&nbsp;
+          </strong>
+          on {essay.publicationDate}
+        </p>
+        <div dangerouslySetInnerHTML={renderedHTML} />
+      </div>
     </div>
   );
 }
