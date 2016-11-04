@@ -18,7 +18,7 @@ class EssaysContainer extends Component {
       essaysIds, essaysById, essaysIsFetching, params
     } = this.props;
 
-    if (!essaysById[1]) {
+    if (Object.keys(essaysById).length == 0) {
       return <Loading />;
     }
 
