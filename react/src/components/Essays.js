@@ -16,6 +16,7 @@ const Essays = ({ essaysById }) => {
 
   return (
     <div>
+      <hr />
       {blogEssays}
     </div>
   );
