@@ -8,19 +8,19 @@ const Essay = ({ essay }) => {
 
   return (
     <div className="row">
-      <div className="small-10 medium-5 small-centered columns">
+      <div className="small-11 medium-7 small-centered columns">
         <h1 className="text-center">
           <a href={essay.slug}>
             {essay.title}
           </a>
         </h1>
-        <p className="text-center">
+        <h4 className="text-center">
           Posted by&nbsp;
           <strong>
             {essay.author}&nbsp;
           </strong>
           on {essay.publicationDate}
-        </p>
+        </h4>
         <div dangerouslySetInnerHTML={renderedHTML} />
       </div>
     </div>
