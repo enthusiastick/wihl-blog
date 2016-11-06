@@ -13,3 +13,6 @@ hr {
     background-image: linear-gradient(to right, #101010, #FFBF00, #101010);
 }
 
+#essay-show {
+  margin-top: 2rem;
+}
