@@ -1,37 +1,14 @@
-import humps from 'humps';
+import fetchEssay from './WihlBlogApi/fetchEssay';
+import fetchEssays from './WihlBlogApi/fetchEssays';
 
 class WihlBlogApi {
 
   static fetchEssay(slug) {
-    return new Promise((resolve, reject) => {
-      $.ajax({
-        url: `/api/v1/essays/${slug}`,
-        dataType: 'json'
-      })
-      .done(data => {
-        let camelizedData = humps.camelizeKeys(data);
-        resolve(camelizedData);
-      })
-      .fail(data => {
-        reject();
-      })
-    });
+    return fetchEssay(slug);
   }
 
   static fetchEssays() {
-    return new Promise((resolve, reject) => {
-      $.ajax({
-        url: `/api/v1/essays`,
-        dataType: 'json'
-      })
-      .done(data => {
-        let camelizedData = humps.camelizeKeys(data);
-        resolve(camelizedData);
-      })
-      .fail(data => {
-        reject();
-      })
-    })
+    return fetchEssays();
   }
 
 }
