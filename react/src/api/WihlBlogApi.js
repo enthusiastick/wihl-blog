@@ -1,5 +1,5 @@
-import fetchEssay from './WihlBlogApi/fetchEssay';
-import fetchEssays from './WihlBlogApi/fetchEssays';
+import fetchEssay from './wihlBlogApi/fetchEssay';
+import fetchEssays from './wihlBlogApi/fetchEssays';
 
 class WihlBlogApi {
 
