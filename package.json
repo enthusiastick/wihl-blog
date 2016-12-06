@@ -1,6 +1,6 @@
 {
   "name": "wihl-blog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "redux": "^3.6.0",
     "redux-form": "^6.2.1",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "whatwg-fetch": "^2.0.1"
   }
 }
