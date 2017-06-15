@@ -16,3 +16,9 @@ hr {
 #essay-show {
   margin-top: 2rem;
 }
+
+.not-found {
+  background: no-repeat center url("https://www.whatishouselight.com/img/im_afraid_dave_my_mind_is_going_i_can_feel_it_there_is_no_question_about_it.png");
+  height: 766px;
+  width: 100%;
+}

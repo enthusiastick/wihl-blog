@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Loading from '../components/Loading';
 import Essay from '../components/Essay';
+import Loading from '../components/Loading';
+import NotFound from '../components/NotFound';
 import { fetchEssay } from '../actions/essays';
 
 class EssayContainer extends Component {
@@ -30,7 +31,7 @@ class EssayContainer extends Component {
 
     if (!essay) {
       if (essaysNotFound) {
-        return null;
+        return <NotFound />;
       } else {
         return <Loading />;
       }
