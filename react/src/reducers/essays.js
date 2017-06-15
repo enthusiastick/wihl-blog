@@ -11,7 +11,8 @@ const initialState = {
   byId: {},
   bySlug: {},
   isFetchingEssays: false,
-  isFetchingEssay: false
+  isFetchingEssay: false,
+  notFound: false
 };
 
 let essays = (state = initialState, action) => {
@@ -22,7 +23,8 @@ let essays = (state = initialState, action) => {
       });
     case FETCH_ESSAY_REQUEST_FAILURE:
       return Object.assign({}, state, {
-        isFetchingEssay: false
+        isFetchingEssay: false,
+        notFound: true
       });
     case FETCH_ESSAY_REQUEST_SUCCESS:
       let essayById = { [action.essay.id]: action.essay };

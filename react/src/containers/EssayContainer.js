@@ -23,13 +23,17 @@ class EssayContainer extends Component {
   }
 
   render() {
-    let { essaysById, essaysBySlug, essaysIsFetching, params } = this.props;
+    let { essaysById, essaysBySlug, essaysIsFetching, essaysNotFound, params } = this.props;
     let { slug } = params;
 
     let essay = essaysBySlug[slug];
 
     if (!essay) {
-      return <Loading />;
+      if (essaysNotFound) {
+        return null;
+      } else {
+        return <Loading />;
+      }
     }
 
     return (
@@ -42,7 +46,8 @@ let mapStateToProps = ({ essays, routing }) => {
   return {
     essaysIsFetching: essays.isFetching,
     essaysById: essays.byId,
-    essaysBySlug: essays.bySlug
+    essaysBySlug: essays.bySlug,
+    essaysNotFound: essays.notFound
   }
 };
 

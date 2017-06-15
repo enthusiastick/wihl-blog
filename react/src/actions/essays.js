@@ -39,9 +39,8 @@ let fetchEssayRequestFailure = () => {
 let fetchEssay = (slug) => dispatch => {
   dispatch(fetchEssayRequest());
   return WihlBlogApi.fetchEssay(slug)
-  .then(
-    data => dispatch(fetchEssayRequestSuccess(data)),
-    () => dispatch(fetchEssayRequestFailure())
+  .then(data => dispatch(fetchEssayRequestSuccess(data)))
+  .catch(() => dispatch(fetchEssayRequestFailure())
   );
 };
 

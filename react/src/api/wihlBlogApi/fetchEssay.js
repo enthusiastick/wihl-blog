@@ -15,7 +15,8 @@ import wihlBlogUrl from '../../constants/wihlBlogUrl';
     .then(data => {
       let camelizedData = humps.camelizeKeys(data);
       return camelizedData;
-    });
+    })
+    .catch(error => { return error })
   }
 
 export default fetchEssay;
